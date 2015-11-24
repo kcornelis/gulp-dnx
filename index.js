@@ -14,7 +14,7 @@ function dnxRunner(dnxCommand, options) {
     build: false,
     run: true,
     cwd: './'
-  }, options);
+  }, options === undefined ? dnxCommand : options);
 
   if (!options.restore && !options.build && !options.run) {
     throw new gutil.PluginError(PLUGIN_NAME, 'No action has been specified');
